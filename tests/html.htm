@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+</head>
+<body>
+
+  <h1 id="main-title">Welcome to My App</h1>
+
+  <form id="loginForm">
+    <label for="username">Username</label>
+    <input type="text" id="username" name="userName" class="input-field" placeholder="Enter username">
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="passWord" class="input-field" placeholder="Enter password">
+
+    <button id="loginBtn" class="btn primary-btn">Login</button>
+  </form>
+
+  <a href="/forgot-password" class="link">Forgot Password?</a>
+
+  <div class="card">
+    <p class="description">This is a sample description</p>
+  </div>
+
+</body>
+</html>
+import { test, expect } from '@playwright/test';
+
+test('sample test', async ({ page }) => {
+
+  // Open website
+  await page.goto('https://example.com');
+
+  // Verify page title
+  await expect(page).toHaveTitle(/Example/);
+  await page.locator('#id'="username").fill("dhurv")
+
+  // Click a link
+  await page.locator('text=More information').click();
+
+});
