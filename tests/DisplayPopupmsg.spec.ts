@@ -14,6 +14,7 @@ test.describe('Popup message check',()=>{
         await popup.AlerPopupHandle()
         
         await popup.AlertMsg()
+        await expect(page).toHaveURL("")
         
         
     })
