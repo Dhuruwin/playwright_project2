@@ -81,6 +81,10 @@ test.describe('checkbox test',()=>{
         await checkEle.uncheckallbtn()
         await expect(checkEle.checkall).toBeEnabled()
         await expect(checkEle.checkall).toBeVisible()
+        await expect(checkEle.multioption1).not.toBeChecked()
+        await expect(checkEle.multioption2).not.toBeChecked()
+        await expect(checkEle.multioption3).not.toBeChecked()
+        await expect(checkEle.multioption4).not.toBeChecked()
 
     })
    
