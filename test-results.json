@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 1
+      "actualWorkers": 3
     },
     "preserveOutput": "always",
     "projects": [
@@ -20,7 +20,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 3
         },
         "id": "chromium",
         "name": "chromium",
@@ -60,21 +60,21 @@
   },
   "suites": [
     {
-      "title": "DisplayPopupmsg.spec.ts",
-      "file": "DisplayPopupmsg.spec.ts",
+      "title": "checkbox.spec.ts",
+      "file": "checkbox.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Popup message check",
-          "file": "DisplayPopupmsg.spec.ts",
-          "line": 6,
+          "title": "checkbox test",
+          "file": "checkbox.spec.ts",
+          "line": 4,
           "column": 6,
           "specs": [
             {
-              "title": "Confirm box accept",
-              "ok": true,
+              "title": "single checkbox test",
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -87,34 +87,164 @@
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 7667,
-                      "errors": [],
-                      "stdout": [
+                      "status": "failed",
+                      "duration": 1725,
+                      "error": {
+                        "message": "Error: page.goto: url: expected string, got undefined",
+                        "stack": "Error: page.goto: url: expected string, got undefined\n    at checkbox.navigate (E:\\Typescript\\page\\checkbox.page.ts:31:25)\n    at E:\\Typescript\\tests\\checkbox.spec.ts:8:25",
+                        "location": {
+                          "file": "E:\\Typescript\\page\\checkbox.page.ts",
+                          "column": 25,
+                          "line": 31
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39m..\\page\\checkbox.page.ts:31\n\n\u001b[0m \u001b[90m 29 |\u001b[39m     }\n \u001b[90m 30 |\u001b[39m     \u001b[36masync\u001b[39m navigate(){\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 31 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mgoto(process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mCHECKBOX_URL\u001b[39m\u001b[33m!\u001b[39m)\n \u001b[90m    |\u001b[39m                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 32 |\u001b[39m     }\n \u001b[90m 33 |\u001b[39m     \u001b[36masync\u001b[39m singleCheckbox(){\n \u001b[90m 34 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msinglecheckbox\u001b[33m.\u001b[39mcheck()\u001b[0m"
+                      },
+                      "errors": [
                         {
-                          "text": "Press a button!\n"
+                          "location": {
+                            "file": "E:\\Typescript\\page\\checkbox.page.ts",
+                            "column": 25,
+                            "line": 31
+                          },
+                          "message": "Error: page.goto: url: expected string, got undefined\n\n\u001b[90m   at \u001b[39m..\\page\\checkbox.page.ts:31\n\n\u001b[0m \u001b[90m 29 |\u001b[39m     }\n \u001b[90m 30 |\u001b[39m     \u001b[36masync\u001b[39m navigate(){\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 31 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mgoto(process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mCHECKBOX_URL\u001b[39m\u001b[33m!\u001b[39m)\n \u001b[90m    |\u001b[39m                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 32 |\u001b[39m     }\n \u001b[90m 33 |\u001b[39m     \u001b[36masync\u001b[39m singleCheckbox(){\n \u001b[90m 34 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msinglecheckbox\u001b[33m.\u001b[39mcheck()\u001b[0m\n\u001b[2m    at checkbox.navigate (E:\\Typescript\\page\\checkbox.page.ts:31:25)\u001b[22m\n\u001b[2m    at E:\\Typescript\\tests\\checkbox.spec.ts:8:25\u001b[22m"
                         }
                       ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-19T11:23:15.771Z",
+                      "startTime": "2026-04-27T18:21:29.369Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "E:\\Typescript\\test-results\\DisplayPopupmsg-Popup-message-check-Confirm-box-accept-chromium\\trace.zip"
-                        }
-                      ]
+                      "attachments": [],
+                      "errorLocation": {
+                        "file": "E:\\Typescript\\page\\checkbox.page.ts",
+                        "column": 25,
+                        "line": 31
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
-              "id": "f17108248883e7fe0cf3-787be6046fee237ea137",
-              "file": "DisplayPopupmsg.spec.ts",
-              "line": 21,
-              "column": 10
+              "id": "86e25c52887557374a3e-4c8dd1a82fd8033a51f3",
+              "file": "checkbox.spec.ts",
+              "line": 53,
+              "column": 9
+            },
+            {
+              "title": "disabled checkbox demo",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 1343,
+                      "error": {
+                        "message": "Error: page.goto: url: expected string, got undefined",
+                        "stack": "Error: page.goto: url: expected string, got undefined\n    at checkbox.navigate (E:\\Typescript\\page\\checkbox.page.ts:31:25)\n    at E:\\Typescript\\tests\\checkbox.spec.ts:8:25",
+                        "location": {
+                          "file": "E:\\Typescript\\page\\checkbox.page.ts",
+                          "column": 25,
+                          "line": 31
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39m..\\page\\checkbox.page.ts:31\n\n\u001b[0m \u001b[90m 29 |\u001b[39m     }\n \u001b[90m 30 |\u001b[39m     \u001b[36masync\u001b[39m navigate(){\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 31 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mgoto(process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mCHECKBOX_URL\u001b[39m\u001b[33m!\u001b[39m)\n \u001b[90m    |\u001b[39m                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 32 |\u001b[39m     }\n \u001b[90m 33 |\u001b[39m     \u001b[36masync\u001b[39m singleCheckbox(){\n \u001b[90m 34 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msinglecheckbox\u001b[33m.\u001b[39mcheck()\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "E:\\Typescript\\page\\checkbox.page.ts",
+                            "column": 25,
+                            "line": 31
+                          },
+                          "message": "Error: page.goto: url: expected string, got undefined\n\n\u001b[90m   at \u001b[39m..\\page\\checkbox.page.ts:31\n\n\u001b[0m \u001b[90m 29 |\u001b[39m     }\n \u001b[90m 30 |\u001b[39m     \u001b[36masync\u001b[39m navigate(){\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 31 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mgoto(process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mCHECKBOX_URL\u001b[39m\u001b[33m!\u001b[39m)\n \u001b[90m    |\u001b[39m                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 32 |\u001b[39m     }\n \u001b[90m 33 |\u001b[39m     \u001b[36masync\u001b[39m singleCheckbox(){\n \u001b[90m 34 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msinglecheckbox\u001b[33m.\u001b[39mcheck()\u001b[0m\n\u001b[2m    at checkbox.navigate (E:\\Typescript\\page\\checkbox.page.ts:31:25)\u001b[22m\n\u001b[2m    at E:\\Typescript\\tests\\checkbox.spec.ts:8:25\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-27T18:21:29.333Z",
+                      "annotations": [],
+                      "attachments": [],
+                      "errorLocation": {
+                        "file": "E:\\Typescript\\page\\checkbox.page.ts",
+                        "column": 25,
+                        "line": 31
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "86e25c52887557374a3e-faaf76ed99dfc0b274f1",
+              "file": "checkbox.spec.ts",
+              "line": 62,
+              "column": 9
+            },
+            {
+              "title": "multi checkbox test",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 1590,
+                      "error": {
+                        "message": "Error: page.goto: url: expected string, got undefined",
+                        "stack": "Error: page.goto: url: expected string, got undefined\n    at checkbox.navigate (E:\\Typescript\\page\\checkbox.page.ts:31:25)\n    at E:\\Typescript\\tests\\checkbox.spec.ts:8:25",
+                        "location": {
+                          "file": "E:\\Typescript\\page\\checkbox.page.ts",
+                          "column": 25,
+                          "line": 31
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39m..\\page\\checkbox.page.ts:31\n\n\u001b[0m \u001b[90m 29 |\u001b[39m     }\n \u001b[90m 30 |\u001b[39m     \u001b[36masync\u001b[39m navigate(){\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 31 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mgoto(process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mCHECKBOX_URL\u001b[39m\u001b[33m!\u001b[39m)\n \u001b[90m    |\u001b[39m                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 32 |\u001b[39m     }\n \u001b[90m 33 |\u001b[39m     \u001b[36masync\u001b[39m singleCheckbox(){\n \u001b[90m 34 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msinglecheckbox\u001b[33m.\u001b[39mcheck()\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "E:\\Typescript\\page\\checkbox.page.ts",
+                            "column": 25,
+                            "line": 31
+                          },
+                          "message": "Error: page.goto: url: expected string, got undefined\n\n\u001b[90m   at \u001b[39m..\\page\\checkbox.page.ts:31\n\n\u001b[0m \u001b[90m 29 |\u001b[39m     }\n \u001b[90m 30 |\u001b[39m     \u001b[36masync\u001b[39m navigate(){\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 31 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mgoto(process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mCHECKBOX_URL\u001b[39m\u001b[33m!\u001b[39m)\n \u001b[90m    |\u001b[39m                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 32 |\u001b[39m     }\n \u001b[90m 33 |\u001b[39m     \u001b[36masync\u001b[39m singleCheckbox(){\n \u001b[90m 34 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msinglecheckbox\u001b[33m.\u001b[39mcheck()\u001b[0m\n\u001b[2m    at checkbox.navigate (E:\\Typescript\\page\\checkbox.page.ts:31:25)\u001b[22m\n\u001b[2m    at E:\\Typescript\\tests\\checkbox.spec.ts:8:25\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-27T18:21:29.334Z",
+                      "annotations": [],
+                      "attachments": [],
+                      "errorLocation": {
+                        "file": "E:\\Typescript\\page\\checkbox.page.ts",
+                        "column": 25,
+                        "line": 31
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "86e25c52887557374a3e-b545793e9fd8b2f810e9",
+              "file": "checkbox.spec.ts",
+              "line": 73,
+              "column": 9
             }
           ]
         }
@@ -123,11 +253,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-04-19T11:23:11.661Z",
-    "duration": 18073.155000000006,
-    "expected": 1,
+    "startTime": "2026-04-27T18:21:27.188Z",
+    "duration": 6397.153,
+    "expected": 0,
     "skipped": 0,
-    "unexpected": 0,
+    "unexpected": 3,
     "flaky": 0
   }
 }

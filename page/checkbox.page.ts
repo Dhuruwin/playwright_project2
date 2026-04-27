@@ -28,7 +28,7 @@ export class checkbox{
         this.uncheckall=page.getByRole('button',{name:'Uncheck All'})
     }
     async navigate(){
-        await this.page.goto("https://www.testmuai.com/selenium-playground/checkbox-demo/")
+        await this.page.goto(process.env.CHECKBOX_URL!)
     }
     async singleCheckbox(){
         await this.singlecheckbox.check()

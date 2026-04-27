@@ -1,0 +1,9 @@
+$kind: http-request
+name: https://www.testmuai.com/selenium-playground/javascript-alert-box-demo/?page=click
+url: https://www.testmuai.com/selenium-playground/javascript-alert-box-demo/?page=click
+method: GET
+queryParams:
+  - key: page
+    value: click
+    $type: ""
+order: 1777044111801

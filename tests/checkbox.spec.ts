@@ -7,7 +7,7 @@ test.describe('checkbox test',()=>{
          checkEle =new checkbox(page)
          await checkEle.navigate()
 
-        await expect(page).toHaveURL('https://www.testmuai.com/selenium-playground/checkbox-demo/')
+        await expect(page).toHaveURL(process.env.CHECKBOX_URL!)
         await expect(page.getByRole('heading', { name: 'Checkbox Demo', exact: true })).toBeVisible()
 
         await expect(page.getByRole('heading',{name:'Single Checkbox Demo'})).toBeVisible()
