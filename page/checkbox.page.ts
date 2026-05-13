@@ -12,8 +12,10 @@ export class checkbox{
     readonly multioption4:Locator
     readonly checkall:Locator
     readonly uncheckall:Locator
+    
 
     constructor(page:Page){
+
         this.page=page
         this.singlecheckbox=page.getByRole('checkbox',{name:'Click on check box'})
         this.option1=page.getByRole('checkbox',{name:'Option 1'}).nth(0)
@@ -26,9 +28,13 @@ export class checkbox{
         this.multioption4=page.getByRole('checkbox',{name:'Option 4'}).nth(1)
         this.checkall=page.getByRole('button',{name:'Check All'})
         this.uncheckall=page.getByRole('button',{name:'Uncheck All'})
+
     }
+     
+
     async navigate(){
         await this.page.goto(process.env.CHECKBOX_URL!)
+        
     }
     async singleCheckbox(){
         await this.singlecheckbox.check()

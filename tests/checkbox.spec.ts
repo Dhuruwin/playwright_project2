@@ -3,9 +3,10 @@ import { checkbox } from '../page/checkbox.page'
 
 test.describe('checkbox test',()=>{
     let checkEle:checkbox
+    
     test.beforeEach('to check elements',async({page})=>{
          checkEle =new checkbox(page)
-         await checkEle.navigate()
+         await checkEle.navigate(process.env.CHECKBOX_URL!)
 
         await expect(page).toHaveURL(process.env.CHECKBOX_URL!)
         await expect(page.getByRole('heading', { name: 'Checkbox Demo', exact: true })).toBeVisible()

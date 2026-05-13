@@ -9,9 +9,9 @@
     "globalTimeout": 0,
     "grep": {},
     "grepInvert": null,
-    "maxFailures": 0,
+    "maxFailures": 1,
     "metadata": {
-      "actualWorkers": 3
+      "actualWorkers": 1
     },
     "preserveOutput": "always",
     "projects": [
@@ -20,7 +20,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 3
+          "actualWorkers": 1
         },
         "id": "chromium",
         "name": "chromium",
@@ -29,7 +29,7 @@
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 30000
+        "timeout": 0
       }
     ],
     "quiet": false,
@@ -55,209 +55,94 @@
     "updateSnapshots": "missing",
     "updateSourceMethod": "patch",
     "version": "1.58.2",
-    "workers": 4,
+    "workers": 1,
     "webServer": null
   },
   "suites": [
     {
-      "title": "checkbox.spec.ts",
-      "file": "checkbox.spec.ts",
+      "title": "multitab.spec.ts",
+      "file": "multitab.spec.ts",
       "column": 0,
       "line": 0,
-      "specs": [],
-      "suites": [
+      "specs": [
         {
-          "title": "checkbox test",
-          "file": "checkbox.spec.ts",
-          "line": 4,
-          "column": 6,
-          "specs": [
+          "title": "multi tab test",
+          "ok": false,
+          "tags": [],
+          "tests": [
             {
-              "title": "single checkbox test",
-              "ok": false,
-              "tags": [],
-              "tests": [
+              "timeout": 0,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
                 {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 70009,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Logout' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Logout' })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Logout' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Logout' })\u001b[22m\n\n    at E:\\Typescript\\tests\\multitab.spec.ts:21:39",
+                    "location": {
+                      "file": "E:\\Typescript\\tests\\multitab.spec.ts",
+                      "column": 39,
+                      "line": 21
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 19 |\u001b[39m     \u001b[36mawait\u001b[39m loginpage\u001b[33m.\u001b[39mloginclick()\n \u001b[90m 20 |\u001b[39m     \u001b[36mawait\u001b[39m expect(firstPage\u001b[33m.\u001b[39mlocator(\u001b[32m'#flash'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'You logged into a secure area!'\u001b[39m)\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 21 |\u001b[39m     \u001b[36mawait\u001b[39m expect(loginpage\u001b[33m.\u001b[39mlogoutbtn)\u001b[33m.\u001b[39mtoBeVisible()\n \u001b[90m    |\u001b[39m                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 22 |\u001b[39m     \u001b[36mawait\u001b[39m loginpage\u001b[33m.\u001b[39mlogoutclick()\n \u001b[90m 23 |\u001b[39m     \u001b[36mawait\u001b[39m expect(firstPage\u001b[33m.\u001b[39mlocator(\u001b[32m'#flash'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'You logged out of the secure area!'\u001b[39m)\n \u001b[90m 24 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 1725,
-                      "error": {
-                        "message": "Error: page.goto: url: expected string, got undefined",
-                        "stack": "Error: page.goto: url: expected string, got undefined\n    at checkbox.navigate (E:\\Typescript\\page\\checkbox.page.ts:31:25)\n    at E:\\Typescript\\tests\\checkbox.spec.ts:8:25",
-                        "location": {
-                          "file": "E:\\Typescript\\page\\checkbox.page.ts",
-                          "column": 25,
-                          "line": 31
-                        },
-                        "snippet": "\u001b[90m   at \u001b[39m..\\page\\checkbox.page.ts:31\n\n\u001b[0m \u001b[90m 29 |\u001b[39m     }\n \u001b[90m 30 |\u001b[39m     \u001b[36masync\u001b[39m navigate(){\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 31 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mgoto(process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mCHECKBOX_URL\u001b[39m\u001b[33m!\u001b[39m)\n \u001b[90m    |\u001b[39m                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 32 |\u001b[39m     }\n \u001b[90m 33 |\u001b[39m     \u001b[36masync\u001b[39m singleCheckbox(){\n \u001b[90m 34 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msinglecheckbox\u001b[33m.\u001b[39mcheck()\u001b[0m"
+                      "location": {
+                        "file": "E:\\Typescript\\tests\\multitab.spec.ts",
+                        "column": 39,
+                        "line": 21
                       },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "E:\\Typescript\\page\\checkbox.page.ts",
-                            "column": 25,
-                            "line": 31
-                          },
-                          "message": "Error: page.goto: url: expected string, got undefined\n\n\u001b[90m   at \u001b[39m..\\page\\checkbox.page.ts:31\n\n\u001b[0m \u001b[90m 29 |\u001b[39m     }\n \u001b[90m 30 |\u001b[39m     \u001b[36masync\u001b[39m navigate(){\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 31 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mgoto(process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mCHECKBOX_URL\u001b[39m\u001b[33m!\u001b[39m)\n \u001b[90m    |\u001b[39m                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 32 |\u001b[39m     }\n \u001b[90m 33 |\u001b[39m     \u001b[36masync\u001b[39m singleCheckbox(){\n \u001b[90m 34 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msinglecheckbox\u001b[33m.\u001b[39mcheck()\u001b[0m\n\u001b[2m    at checkbox.navigate (E:\\Typescript\\page\\checkbox.page.ts:31:25)\u001b[22m\n\u001b[2m    at E:\\Typescript\\tests\\checkbox.spec.ts:8:25\u001b[22m"
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-04-27T18:21:29.369Z",
-                      "annotations": [],
-                      "attachments": [],
-                      "errorLocation": {
-                        "file": "E:\\Typescript\\page\\checkbox.page.ts",
-                        "column": 25,
-                        "line": 31
-                      }
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Logout' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Logout' })\u001b[22m\n\n\n\u001b[0m \u001b[90m 19 |\u001b[39m     \u001b[36mawait\u001b[39m loginpage\u001b[33m.\u001b[39mloginclick()\n \u001b[90m 20 |\u001b[39m     \u001b[36mawait\u001b[39m expect(firstPage\u001b[33m.\u001b[39mlocator(\u001b[32m'#flash'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'You logged into a secure area!'\u001b[39m)\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 21 |\u001b[39m     \u001b[36mawait\u001b[39m expect(loginpage\u001b[33m.\u001b[39mlogoutbtn)\u001b[33m.\u001b[39mtoBeVisible()\n \u001b[90m    |\u001b[39m                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 22 |\u001b[39m     \u001b[36mawait\u001b[39m loginpage\u001b[33m.\u001b[39mlogoutclick()\n \u001b[90m 23 |\u001b[39m     \u001b[36mawait\u001b[39m expect(firstPage\u001b[33m.\u001b[39mlocator(\u001b[32m'#flash'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'You logged out of the secure area!'\u001b[39m)\n \u001b[90m 24 |\u001b[39m\u001b[0m\n\u001b[2m    at E:\\Typescript\\tests\\multitab.spec.ts:21:39\u001b[22m"
                     }
                   ],
-                  "status": "unexpected"
-                }
-              ],
-              "id": "86e25c52887557374a3e-4c8dd1a82fd8033a51f3",
-              "file": "checkbox.spec.ts",
-              "line": 53,
-              "column": 9
-            },
-            {
-              "title": "disabled checkbox demo",
-              "ok": false,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-09T20:10:09.509Z",
                   "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
+                  "attachments": [
                     {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "failed",
-                      "duration": 1343,
-                      "error": {
-                        "message": "Error: page.goto: url: expected string, got undefined",
-                        "stack": "Error: page.goto: url: expected string, got undefined\n    at checkbox.navigate (E:\\Typescript\\page\\checkbox.page.ts:31:25)\n    at E:\\Typescript\\tests\\checkbox.spec.ts:8:25",
-                        "location": {
-                          "file": "E:\\Typescript\\page\\checkbox.page.ts",
-                          "column": 25,
-                          "line": 31
-                        },
-                        "snippet": "\u001b[90m   at \u001b[39m..\\page\\checkbox.page.ts:31\n\n\u001b[0m \u001b[90m 29 |\u001b[39m     }\n \u001b[90m 30 |\u001b[39m     \u001b[36masync\u001b[39m navigate(){\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 31 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mgoto(process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mCHECKBOX_URL\u001b[39m\u001b[33m!\u001b[39m)\n \u001b[90m    |\u001b[39m                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 32 |\u001b[39m     }\n \u001b[90m 33 |\u001b[39m     \u001b[36masync\u001b[39m singleCheckbox(){\n \u001b[90m 34 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msinglecheckbox\u001b[33m.\u001b[39mcheck()\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "E:\\Typescript\\page\\checkbox.page.ts",
-                            "column": 25,
-                            "line": 31
-                          },
-                          "message": "Error: page.goto: url: expected string, got undefined\n\n\u001b[90m   at \u001b[39m..\\page\\checkbox.page.ts:31\n\n\u001b[0m \u001b[90m 29 |\u001b[39m     }\n \u001b[90m 30 |\u001b[39m     \u001b[36masync\u001b[39m navigate(){\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 31 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mgoto(process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mCHECKBOX_URL\u001b[39m\u001b[33m!\u001b[39m)\n \u001b[90m    |\u001b[39m                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 32 |\u001b[39m     }\n \u001b[90m 33 |\u001b[39m     \u001b[36masync\u001b[39m singleCheckbox(){\n \u001b[90m 34 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msinglecheckbox\u001b[33m.\u001b[39mcheck()\u001b[0m\n\u001b[2m    at checkbox.navigate (E:\\Typescript\\page\\checkbox.page.ts:31:25)\u001b[22m\n\u001b[2m    at E:\\Typescript\\tests\\checkbox.spec.ts:8:25\u001b[22m"
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-04-27T18:21:29.333Z",
-                      "annotations": [],
-                      "attachments": [],
-                      "errorLocation": {
-                        "file": "E:\\Typescript\\page\\checkbox.page.ts",
-                        "column": 25,
-                        "line": 31
-                      }
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "E:\\Typescript\\test-results\\multitab-multi-tab-test-chromium\\error-context.md"
                     }
                   ],
-                  "status": "unexpected"
+                  "errorLocation": {
+                    "file": "E:\\Typescript\\tests\\multitab.spec.ts",
+                    "column": 39,
+                    "line": 21
+                  }
                 }
               ],
-              "id": "86e25c52887557374a3e-faaf76ed99dfc0b274f1",
-              "file": "checkbox.spec.ts",
-              "line": 62,
-              "column": 9
-            },
-            {
-              "title": "multi checkbox test",
-              "ok": false,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "failed",
-                      "duration": 1590,
-                      "error": {
-                        "message": "Error: page.goto: url: expected string, got undefined",
-                        "stack": "Error: page.goto: url: expected string, got undefined\n    at checkbox.navigate (E:\\Typescript\\page\\checkbox.page.ts:31:25)\n    at E:\\Typescript\\tests\\checkbox.spec.ts:8:25",
-                        "location": {
-                          "file": "E:\\Typescript\\page\\checkbox.page.ts",
-                          "column": 25,
-                          "line": 31
-                        },
-                        "snippet": "\u001b[90m   at \u001b[39m..\\page\\checkbox.page.ts:31\n\n\u001b[0m \u001b[90m 29 |\u001b[39m     }\n \u001b[90m 30 |\u001b[39m     \u001b[36masync\u001b[39m navigate(){\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 31 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mgoto(process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mCHECKBOX_URL\u001b[39m\u001b[33m!\u001b[39m)\n \u001b[90m    |\u001b[39m                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 32 |\u001b[39m     }\n \u001b[90m 33 |\u001b[39m     \u001b[36masync\u001b[39m singleCheckbox(){\n \u001b[90m 34 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msinglecheckbox\u001b[33m.\u001b[39mcheck()\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "E:\\Typescript\\page\\checkbox.page.ts",
-                            "column": 25,
-                            "line": 31
-                          },
-                          "message": "Error: page.goto: url: expected string, got undefined\n\n\u001b[90m   at \u001b[39m..\\page\\checkbox.page.ts:31\n\n\u001b[0m \u001b[90m 29 |\u001b[39m     }\n \u001b[90m 30 |\u001b[39m     \u001b[36masync\u001b[39m navigate(){\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 31 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mgoto(process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mCHECKBOX_URL\u001b[39m\u001b[33m!\u001b[39m)\n \u001b[90m    |\u001b[39m                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 32 |\u001b[39m     }\n \u001b[90m 33 |\u001b[39m     \u001b[36masync\u001b[39m singleCheckbox(){\n \u001b[90m 34 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msinglecheckbox\u001b[33m.\u001b[39mcheck()\u001b[0m\n\u001b[2m    at checkbox.navigate (E:\\Typescript\\page\\checkbox.page.ts:31:25)\u001b[22m\n\u001b[2m    at E:\\Typescript\\tests\\checkbox.spec.ts:8:25\u001b[22m"
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-04-27T18:21:29.334Z",
-                      "annotations": [],
-                      "attachments": [],
-                      "errorLocation": {
-                        "file": "E:\\Typescript\\page\\checkbox.page.ts",
-                        "column": 25,
-                        "line": 31
-                      }
-                    }
-                  ],
-                  "status": "unexpected"
-                }
-              ],
-              "id": "86e25c52887557374a3e-b545793e9fd8b2f810e9",
-              "file": "checkbox.spec.ts",
-              "line": 73,
-              "column": 9
+              "status": "unexpected"
             }
-          ]
+          ],
+          "id": "e0703b6ec7b46742a949-dea94f582cc6bb850c22",
+          "file": "multitab.spec.ts",
+          "line": 4,
+          "column": 5
         }
       ]
     }
   ],
-  "errors": [],
+  "errors": [
+    {
+      "message": "\u001b[31mTesting stopped early after 1 maximum allowed failures.\u001b[39m"
+    }
+  ],
   "stats": {
-    "startTime": "2026-04-27T18:21:27.188Z",
-    "duration": 6397.153,
+    "startTime": "2026-05-09T20:10:07.998Z",
+    "duration": 72740.22,
     "expected": 0,
     "skipped": 0,
-    "unexpected": 3,
+    "unexpected": 1,
     "flaky": 0
   }
 }

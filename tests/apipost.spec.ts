@@ -58,6 +58,15 @@ test.describe('api testing',()=>{
 
 
     })
+    test('api for put',async({request})=>{
+        const response=await request.post('https://jsonplaceholder.typicode.com/posts')
+           expect(response.status()).toBe(201)
+           const postreq=await response.json()
+           console.log(postreq)
+           await(postreq)
+
+        })
+    })
 
 
 })
