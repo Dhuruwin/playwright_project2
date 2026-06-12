@@ -1,4 +1,4 @@
-import{test,expect} from '@playwright/test'
+import{test, expect} from '@playwright/test'
 import { checkbox } from '../page/checkbox.page'
 
 test.describe('checkbox test',()=>{
@@ -6,7 +6,7 @@ test.describe('checkbox test',()=>{
     
     test.beforeEach('to check elements',async({page})=>{
          checkEle =new checkbox(page)
-         await checkEle.navigate(process.env.CHECKBOX_URL!)
+         await checkEle.navigate()
 
         await expect(page).toHaveURL(process.env.CHECKBOX_URL!)
         await expect(page.getByRole('heading', { name: 'Checkbox Demo', exact: true })).toBeVisible()

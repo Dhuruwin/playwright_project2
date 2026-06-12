@@ -1,4 +1,4 @@
-import { Page,Locator } from "@playwright/test";
+import {Page,Locator } from "@playwright/test";
 export class checkbox{
     readonly page:Page
     readonly singlecheckbox:Locator

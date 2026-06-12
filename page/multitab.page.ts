@@ -1,4 +1,4 @@
-import {page,Locator} from '@playwright/test'
+import {Page,Locator} from '@playwright/test'
 export class multitab{
     readonly page:Page
     readonly username:Locator
