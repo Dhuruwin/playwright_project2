@@ -19,7 +19,7 @@ test.describe('Popup message check',()=>{
         
     })
 
-    test.only('Confirm box accept',async({page})=>{
+    test('Confirm box accept',async({page})=>{
         await popup.ConfirmAccept()
         await popup.ConfirmBox()
         await expect(page.locator('#confirm-demo')).toContainText('You pressed OK!')
