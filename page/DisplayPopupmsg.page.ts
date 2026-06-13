@@ -12,7 +12,7 @@ export class AlertMsg{
         this.PromptBtnClick=page.getByRole('button',{name:'Click Me'}).nth(2)
     }
     async Navigate(){
-        await this.page.goto('https://www.testmuai.com/selenium-playground/javascript-alert-box-demo/')
+        await this.page.goto(process.env.ALERT_MSG!)
     }
     async AlerPopupHandle(){
         this.page.on('dialog',async(dialog)=>{

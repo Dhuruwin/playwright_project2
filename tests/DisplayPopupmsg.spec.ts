@@ -7,14 +7,14 @@ test.describe('Popup message check',()=>{
     test.beforeEach('navigation to webpage',async({page})=>{
        popup=new AlertMsg(page)
      await popup.Navigate()
-     await expect(page).toHaveURL('https://www.testmuai.com/selenium-playground/javascript-alert-box-demo/')
+     await expect(page).toHaveURL(process.env.ALERT_MSG! )
     })
 
    test('Alert btn click',async({page})=>{
         await popup.AlerPopupHandle()
         
         await popup.AlertMsg()
-        await expect(page).toHaveURL("")
+        await expect(page).toHaveURL(process.env.ALERT_MSG!)
         
         
     })
